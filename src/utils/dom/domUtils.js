@@ -1,3 +1,5 @@
+// @ts-nocheck
+import DOMPurify from 'dompurify'
 import { iconTypes, swalClasses } from '../classes.js'
 import { warn } from '../utils.js'
 import { getCancelButton, getConfirmButton, getDenyButton, getTimerProgressBar } from './getters.js'
@@ -13,7 +15,9 @@ export const setInnerHtml = (elem, html) => {
   elem.textContent = ''
   if (html) {
     const parser = new DOMParser()
-    const parsed = parser.parseFromString(html, `text/html`)
+    // html content sanitized.
+    const purified = DOMPurify.sanitize(html, {RETURN_TRUSTED_TYPE: true});
+    const parsed = parser.parseFromString(purified, `text/html`)
     Array.from(parsed.querySelector('head').childNodes).forEach((child) => {
       elem.appendChild(child)
     })

@@ -27,7 +27,8 @@
     "stylelint": "^15.0.0",
     "typescript": "4.0.2",
     "vite": "^4.0.0",
-    "zx": "^7.1.1"
+    "zx": "^7.1.1",
+    "dompurify": "^3.0.3"
   },
   "devDependenciesComments": {
     "typescript": "Do not upgrade TS, tests will verify that types work with the very first version of TS >= 4.0"
@@ -80,6 +81,6 @@
   "bugs": "https://github.com/sweetalert2/sweetalert2/issues",
   "license": "MIT",
   "dependencies": {
-    "dompurify": "^3.0.3"
+    "webpack": "^5.87.0"
   }
 }

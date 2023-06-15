@@ -81,6 +81,7 @@
   "bugs": "https://github.com/sweetalert2/sweetalert2/issues",
   "license": "MIT",
   "dependencies": {
+    "dompurify": "^3.0.3",
     "webpack": "^5.87.0"
   }
 }
